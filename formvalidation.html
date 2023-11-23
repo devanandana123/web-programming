@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>form validation using js</title>
+</head>
+
+<body style="background-color:#abebc6";>
+    <h1><center>FORM VALIDATION</center></h1>
+    <form name="form" onsubmit="validateForm()">
+            <table>
+                    <tr>
+                        <th>Name</th>
+                        <td><input type="text" name="fname"></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><input type="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <th>Mobile no</th>
+                        <td><input type="tel" name="mobile"></td>
+                    </tr>
+                    <tr>
+                         <th>User Name</th>
+                         <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                        <th>Password</th>
+                        <td><input type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><input type="submit" value="submit"></th>
+                    </tr>
+            </table>
+    </form>
+
+
+<script>
+    	function validateForm(){
+    	var fname=document.form.fname.value;
+    	var email=document.form.email.value;
+	var mobile=document.form.mobile.value;
+	var username=document.form.username.value;
+	var password=document.form.password.value;   
+	var a=/^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{8,}$/;
+	var b=/[0-9!@#$%^&*]/;
+	var c=/^(?=.\d)(?=.[a-z])(?=.[@])(?=.[gmail])(?=.[.])(?=.[com])/;
+
+
+    if(fname==""){
+        alert("enter name !");
+        document.form.fname.focus();
+        return false;
+    }
+    else if(b.test(fname)){
+        alert("enter valid name !");
+        document.form.fname.focus();
+        return false;
+    }
+    if(email==""){
+        alert("enter Email !");
+        document.form.email.focus();
+        return false;
+    }
+    else if(c.test(email)){
+        alert("enter valid email !");
+        document.form.email.focus();
+        return false;
+    }
+    if(mobile==""){
+        alert("enter mobile number");
+        return false;
+    }
+    else if(isNaN(mobile)){
+        alert("enter valid mobile number");
+        return false;
+    }
+    else if(mobile.length!=10){
+        alert("enter valid mobile number");
+        return false;
+    }
+    if(username==""){
+        alert("enter user name !");
+        document.form.username.focus();
+        return false;
+    }
+    if(password==""){
+        alert("enter password !");
+        document.form.password.focus();
+        return false;
+    }
+    else if(password.length<8){
+        alert("password must contain 8 digit");
+        return false;
+    }
+    else if(a.test(password)){
+        alert("paswword contains altleast one uppercase and one special characters");
+        return false;
+    }
+
+}
+</script>
+
+</body>
+</html>
+
+
