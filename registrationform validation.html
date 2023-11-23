@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>registration form</title>
+</head>
+<body style="background-color:#abebc6";>
+	<h1>registration form validation</h1>
+	<form name="form"onsubmit="validateform()">
+		<h6>Name: </h6><input type="text"name="fname"><br><br>
+		<h6>Age:</h6> <select>
+			<option>select</option>
+			<option>above 18</option>
+			<option>below 18</option>
+		</select><br><br>
+		<h6>Email id:</h6> <input type="email"name="email"><br><br>
+		<h6>Hobbies: </h6><br><br>
+			reading
+				<input type="radio"name="xx">
+			writing
+				<input type="radio"name="xx"><br><br>
+		<h6>Language:</h6> <br><br>
+			<input type="checkbox"name="language">
+				malayalam
+			<input type="checkbox"name="language">
+				english
+			<input type="checkbox"name="language">
+				hindi<br><br>
+		<h6>Password: </h6><input type="password"name="password"><br><br>
+		<h6>Upload: </h6><input type="file"name="upload">
+			choice file<br><br>
+		<input type="SUBMIT"value="SUBMIT">
+</form>
+<script>
+	function validateform(){
+	var fname=document.form.fname.value;
+	var email=document.form.email.value;
+	var xx=document.form.xx.value;
+	var language=document.form.language.value;
+	var password=document.form.password.value;
+	var upload=document.form.upload.value;
+	var a=/^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{8,}$/;
+	var b=/[0-9!@#$%^&*]/;
+	var c=/^(?=.\d)(?=.[a-z])(?=.[@])(?=.[gmail])(?=.[.])(?=.[com])/;
+
+if(fname==""){
+	alert("enter name!!");
+	document.form.fname.focus();
+	return false;
+}
+else if(b.test(fname)){
+	alert("enter valid name!!");
+	document.form.fname.focus();
+	return false;
+}
+if (email==""){
+	alert("enter email!!");
+	document.form.email.focus();
+	return false;
+}
+else if(c.test(email)){
+	alert("enter valid email!!");
+	document.form.email.focus();
+	return false;
+}
+if(xx==""){
+	alert("select hobbies!");
+	document.form.xx.focus;
+	return false;
+}
+if(language==" "){
+	alert("select language");
+	document.form.language.focus;
+	return false;
+}
+if(password==""){
+        alert("enter password !");
+        document.form.password.focus();
+        return false;
+}
+else if(password.length<8){
+        alert("password must contain 8 digit");
+        return false;
+}
+if(upload==""){
+	alert("upload file");
+	return false;
+}
+}
+</script>
+</body>
+</html>
+
