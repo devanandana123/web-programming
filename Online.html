@@ -1,0 +1,95 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+
+var i=0;
+
+function exam()
+
+{
+
+if(document.f1.n1[2].checked)
+
+ i=i+1;
+
+if(document.f1.n2[0].checked)
+
+ i=i+1;
+
+if(document.f1.n3[1].checked)
+
+ i=i+1;
+
+alert("your score is"+i+"/3");
+
+}
+
+</script>
+
+</head>
+
+<style>
+
+  #sbmt{
+
+    padding:auto;
+
+    margin:1 em;
+
+    border:3px solid black;
+
+    outline:none;
+
+}
+
+</style>
+
+<body>
+
+<h1 style="background-color:pink;text-align:center">ONLINE EXAM</h1>
+
+
+
+<form name="f1" action="" method="POST" onsubmit="return exam()" >
+
+<h4>1.Which is even prime number?</h4>
+
+<input type="radio" name="n1" id="num1">8<br>
+
+<input type="radio" name="n1" id="num1">10<br>
+
+<input type="radio" name="n1" id="num1">2<br>
+
+<br>
+
+<h4>2.What is CSS?</h4>
+
+<input type="radio" name="n2" id="num2">Cascading Style Sheet<br>
+
+<input type="radio" name="n2" id="num2">Control Style Sheet<br>
+
+<input type="radio" name="n2" id="num2">Cascading Control Style<br>
+
+<br>
+
+<h4>3.What is floor value of 3.4?</h4>
+
+<input type="radio" name="n3" id="num3">3.4<br>
+
+<input type="radio" name="n3" id="num3">3<br>
+
+<input type="radio" name="n3" id="num3">4<br>
+
+<br>
+
+<br>
+
+<input id="sbmt" type="submit"value="Submit" > 
+
+</form>
+
+</body>
+
+</html>
